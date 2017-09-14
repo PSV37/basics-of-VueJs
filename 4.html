@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VeuJs</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</head>
+<body style="background-color:{{ color  }} " id="app">
+
+<div class="container">
+
+	{{ $data | json }}<br>
+
+	<!-- type your sirname -->
+	<p>Sirname : {{sirname}}</p>
+	<span class="error" v-show="!sirname">Type a sirname</span><br>
+	<input type="text" v-model="sirname" >
+
+	<!-- this text box display after write sirname -->
+	<p>Name :{{name}}</p>
+	<input type="text" v-model="name" v-show="sirname">
+
+	<!-- this link display after write name -->
+	<h2><a v-bind:href="website" v-show="name">Link</a></h2>
+	
+</div>
+
+<script type="text/javascript">
+	
+	new Vue({
+           el:'#app',
+	       data:{ 
+	       	 name:'',
+	       	 sirname:'',
+
+			   website:'https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=zEy5WZKBLqL98wf31KCYDw&gws_rd=ssl',
+		    },
+	    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VeuJs</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+		 <span class="error" style="color:{{ color }}" v-if="!message">type a message</span><br>
+
+		<textarea v-model="message"></textarea><br>
+
+		<button type="submit" v-show='message'>send message</button>	
+</div>
+
+<script type="text/javascript">
+	
+	new Vue({
+           el:'#app',
+	       data:{
+			    message : '',
+			    color:'red',
+		       }
+	       });
+</script>
+
+
+</body>
+</html>

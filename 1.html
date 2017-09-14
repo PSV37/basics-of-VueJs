@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VeuJs</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</head>
+<body>
+
+<div id="myapp">
+<!-- simply display message -->
+	<p>{{ msg }}</p>
+	<input v-model="msg"><br>
+
+	{{ $data | json }}
+ 
+</div>
+
+<script> 
+
+  new Vue({
+           el:'#myapp',
+	       data:{
+			    msg : 'Hello World'
+		        },
+	    });
+  
+
+</script>
+
+</body>
+</html>

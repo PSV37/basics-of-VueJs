@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VeuJs</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</head>
+<body style="background-color:{{ color  }} " >
+<div id="app">
+<!-- you can also use simplay this code without call any function -->
+<!--// <button v-on:click='age++'>Add</button>
+<button  v-on:click='age--'>subtract</button>// -->
+
+<button v-on:click="add">Add</button>
+<button  v-on:click="subtract">subtract</button>
+<p >My age is {{age}}</p>
+
+{{$data | json }}
+ </div>
+
+
+<script type="text/javascript">
+	new Vue({
+           el:'#app',
+	       data:{ 
+	       	age:'25',
+		    },
+
+		    methods:{
+		    	add:function()
+		    	{
+		    		this.age++;
+		    	},
+		    	subtract:function()
+		    	{
+		    		this.age--;
+		    	}
+		    }
+	    })
+</script>
+
+
+</body>
+</html>

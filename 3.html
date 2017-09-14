@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VeuJs</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
+</head>
+<!-- you can also change background -->
+<body style="background-color:{{ color  }} " id="app">
+
+<div >
+<input type="text"  v-model="color"  placeholder="Enter Your color choice">
+<!-- (v-on:submit)you can also use-->
+ <form method="post" action="action_3.html" @submit.prevent ="handleIt">
+		<span class="error" v-model="color">type name</span><br>
+		<input type="text" name="text">
+		<input type="submit" name="name"  @click="countsa"><br>
+
+		{{ $data | json }}
+
+</form>
+		<button">Count :{{ count }} </button>
+	
+</div>
+
+<script type="text/javascript">
+	
+	new Vue({
+           el:'#app',
+	       data:{
+			   count : 0,
+			   color:'red',
+		    },
+
+		    methods:{
+		    	handleIt:function(e){
+		    		
+		    		/*e.preventDefault();*/
+		    	},
+		    	countsa:function()
+		    	{
+		    		this.count += 1;
+		    	}
+
+		    }
+	    })
+</script>
+
+
+</body>
+</html>
